@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head> 
+		
+        <title>Poll Listing</title>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+		
+		<link rel="stylesheet" href="dist/main.min.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="vue">
+			<div class="poll-listing" v-show="currentPage=='poll-listing'">
+				<poll-today 
+				v-bind:poll="pollList[0]"
+				></poll-today>
+				
+				<div class="polls">
+					<poll-item 
+					v-for="item in pollList"
+					v-bind:poll="item"
+					v-show="item.id>1"
+					></poll-item>	
+				</div>
+			</div>
+			
+			<div class="poll-page" v-show="currentPage=='single-poll'" >			
+				<single-poll
+				v-bind:poll="singlePoll[0]"
+				></single-poll>
+			</div>	
+			
+		</div>
+				
+		<script type="text/javascript" src="dist/main.min.js"></script>	
+		
+	</body>
+</html> 
+
+
+
+
+
+
+
