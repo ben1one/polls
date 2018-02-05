@@ -8,7 +8,7 @@ $file = 'db.txt';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	
 	if(!isset($_POST['pid']) || !isset($_POST['optionKey'])){
-		die('Error');
+		die('No Request');
 	}	
 	$pid = $_POST['pid'];
 	$optionKey = $_POST['optionKey'];
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }else{
 
 	if(!isset($_GET['pid'])){
-		die('Error');
+		die('No Request');
 	}
 
 	header('Content-Type: application/json');
